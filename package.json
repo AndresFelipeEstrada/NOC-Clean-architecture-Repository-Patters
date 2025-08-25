@@ -1,0 +1,29 @@
+{
+	"name": "noc",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "tsnd --respawn --clear --env-file=.env src/app.ts",
+		"dev:debug": "tsnd --respawn --clear --env-file=.env --inspect=9229 src/app.ts",
+		"build": "rimraf ./dist && tsc",
+		"start": "npm run build && node dist/app.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.0",
+		"@types/node": "^24.3.0",
+		"@types/nodemailer": "^7.0.1",
+		"rimraf": "^6.0.1",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^5.9.2"
+	},
+	"dependencies": {
+		"cron": "^4.3.3",
+		"env-var": "^7.5.0",
+		"nodemailer": "^7.0.5"
+	}
+}
