@@ -10,22 +10,12 @@
 // );
 
 export class Server {
-  public static async start() {
-    console.log("Server started...");
+	public static async start() {
+		console.log("Server started...");
 
-    // new SendEmailLogs(emailService, fileSystemLogRepository).execute([
-    // 	"andresfe1396@gmail.com",
-    // ]);
+		// new SendEmailLogs(emailService, fileSystemLogRepository).execute([
+		// 	"andresfe1396@gmail.com",
+		// ]);
 
-    // });
-    //
-    // CronService.createJob("*/2 * * * * *", () => {
-    // 	const url = "https://google.com";
-    // 	new CheckService(
-    // 		fileSystemLogRepository,
-    // 		() => console.log(`${url} is ok`),
-    // 		(error) => console.log(error),
-    // 	).execute(url);
-    // });
-  }
+	}
 }
