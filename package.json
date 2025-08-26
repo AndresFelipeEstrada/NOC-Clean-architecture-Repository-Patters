@@ -24,6 +24,7 @@
 	"dependencies": {
 		"cron": "^4.3.3",
 		"env-var": "^7.5.0",
+		"mongoose": "^8.18.0",
 		"nodemailer": "^7.0.5"
 	}
 }
