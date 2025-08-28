@@ -1,5 +1,6 @@
+import { SeverityLevel } from "@prisma/client";
 import type { EmailService } from "../../../presentation/email/email.service";
-import { LogEntity, LogSeverityLevel } from "../../entities/log.entity";
+import { LogEntity } from "../../entities/log.entity";
 import type { LogRepository } from "../../repository/log.repository";
 
 interface SendLogsEmailUseCase {
@@ -20,7 +21,7 @@ export class SendEmailLogs implements SendLogsEmailUseCase {
 			}
 
 			const log = new LogEntity({
-				level: LogSeverityLevel.low,
+				level: SeverityLevel.LOW,
 				message: "Log email sent",
 				origin: "send-email-logs.ts",
 			});
@@ -29,7 +30,7 @@ export class SendEmailLogs implements SendLogsEmailUseCase {
 			return true;
 		} catch (error) {
 			const log = new LogEntity({
-				level: LogSeverityLevel.high,
+				level: SeverityLevel.HIGH,
 				message: `${error}`,
 				origin: "send-email-logs.ts",
 			});

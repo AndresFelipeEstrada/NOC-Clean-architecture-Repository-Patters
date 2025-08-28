@@ -1,4 +1,5 @@
-import { LogEntity, LogSeverityLevel } from "../../entities/log.entity";
+import { SeverityLevel } from "@prisma/client";
+import { LogEntity } from "../../entities/log.entity";
 import type { LogRepository } from "../../repository/log.repository";
 
 interface CheckServiceUseCase {
@@ -24,7 +25,7 @@ export class CheckService implements CheckServiceUseCase {
 			}
 
 			const log = new LogEntity({
-				level: LogSeverityLevel.low,
+				level: SeverityLevel.LOW,
 				message: `Service ${url} working`,
 				origin: "check-service.ts",
 			});
@@ -37,7 +38,7 @@ export class CheckService implements CheckServiceUseCase {
 			const errorMessage = `${error}`;
 
 			const log = new LogEntity({
-				level: LogSeverityLevel.high,
+				level: SeverityLevel.HIGH,
 				message: errorMessage,
 				origin: "check-service.ts",
 			});

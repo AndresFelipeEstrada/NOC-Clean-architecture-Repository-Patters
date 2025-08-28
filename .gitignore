@@ -6,6 +6,9 @@
 
 ### Postgres ###
 /postgres/
+
+### Prisma ###
+/prisma/
 ### Linux ###
 *~
 
@@ -181,3 +184,5 @@ tags
 [._]*.un~
 
 # End of https://www.toptal.com/developers/gitignore/api/node,vim,linux
+
+/src/generated/prisma

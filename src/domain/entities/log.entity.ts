@@ -1,18 +1,15 @@
-export enum LogSeverityLevel {
-	low = "low",
-	medium = "medium",
-	high = "high",
-}
+import type { SeverityLevel } from "@prisma/client";
+
 
 interface LogEntityOptions {
 	message: string;
-	level: LogSeverityLevel;
+	level: SeverityLevel;
 	createdAt?: Date;
 	origin: string;
 }
 
 export class LogEntity {
-	public level: LogSeverityLevel;
+	public level: SeverityLevel;
 	public message: string;
 	public createdAt: Date;
 	public origin: string;
