@@ -3,6 +3,9 @@
 
 ### Mongo ###
 /mongo/
+
+### Postgres ###
+/postgres/
 ### Linux ###
 *~
 
