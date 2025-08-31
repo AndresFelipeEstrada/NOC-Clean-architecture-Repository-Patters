@@ -17,7 +17,6 @@ const config: Config = {
 	testPathIgnorePatterns: [
 		"/node_modules/",
 		"/postgres/",
-		"/mongo",
 		"/postgres-test/",
 	],
 	setupFiles: ["<rootDir>/setupTests.ts"],

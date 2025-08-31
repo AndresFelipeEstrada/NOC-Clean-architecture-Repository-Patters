@@ -1,5 +1,3 @@
-import { envs } from "./envs.plugin";
-
 describe("envs.plugin.ts", () => {
 	it("should return error if not found env", async () => {
 		jest.resetModules();

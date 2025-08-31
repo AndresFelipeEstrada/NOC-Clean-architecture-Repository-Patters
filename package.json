@@ -9,7 +9,7 @@
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/app.js",
     "test": "jest --env-file=.env.test",
-    "test:watch": "jest --watch --env-file=.env.test",
+    "test:watch": "jest --detectOpenHandles --watch --env-file=.env.test",
     "test:coverage": "jest --coverage --env-file=.env.test",
     "test:debug": "node --inspect-brk --env-file=.env.test ./node_modules/.bin/jest",
     "docker:test": "docker-compose -f docker-compose.test.yml --env-file=.env.test up -d"
