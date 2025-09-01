@@ -10,7 +10,7 @@
     "start": "npm run build && node dist/app.js",
     "test": "jest --env-file=.env.test",
     "test:watch": "jest --detectOpenHandles --watch --env-file=.env.test",
-    "test:coverage": "jest --coverage --env-file=.env.test",
+    "test:coverage": "jest --coverage --detectOpenHandles --env-file=.env.test",
     "test:debug": "node --inspect-brk --env-file=.env.test ./node_modules/.bin/jest",
     "docker:test": "docker-compose -f docker-compose.test.yml --env-file=.env.test up -d"
   },
