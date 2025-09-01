@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { envs } from "../../config/plugins/envs.plugin";
 import { MongoDatabase } from "./init";
 
-describe("init MongoDB", () => {
+describe("init.ts MongoDB", () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 	});
