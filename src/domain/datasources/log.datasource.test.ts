@@ -24,11 +24,28 @@ describe("log.datasource.ts", () => {
     expect(mockLogDatasource).toHaveProperty("saveLog");
     expect(mockLogDatasource).toHaveProperty("getLogs");
 
-    await mockLogDatasource.saveLog(newLog)
-    const logs = await mockLogDatasource.getLogs(SeverityLevel.HIGH)
+    await mockLogDatasource.saveLog(newLog);
+    const logs = await mockLogDatasource.getLogs(SeverityLevel.HIGH);
 
-    expect(logs).toHaveLength(1)
-    expect(logs[0]).toEqual(newLog)
-    expect(logs[0]).toBeInstanceOf(LogEntity)
+    expect(logs).toHaveLength(1);
+    expect(logs[0]).toEqual(newLog);
+    expect(logs[0]).toBeInstanceOf(LogEntity);
+  });
+
+  it("should return an array of LogEntity", async () => {
+    const mock = new MockLogDatasource();
+    const logs = await mock.getLogs(SeverityLevel.HIGH);
+
+    expect(Array.isArray(logs)).toBe(true);
+    expect(logs[0]).toBeInstanceOf(LogEntity);
+  });
+
+  it("should have correct method signatures", async () => {
+    const saveLog = new MockLogDatasource().saveLog;
+    const getLogs = new MockLogDatasource().getLogs;
+
+
+    expect(saveLog).toBeDefined()
+    expect(getLogs).toBeDefined()
   });
 });
