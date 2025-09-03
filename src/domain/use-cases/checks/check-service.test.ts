@@ -3,7 +3,7 @@ import type { LogRepository } from "../../repository/log.repository";
 import { CheckService } from "./check-service";
 
 describe("check-service.ts", () => {
-  (global.fetch as jest.Mock).mockReturnValueOnce({ ok: true });
+  global.fetch = jest.fn().mockResolvedValue({ ok: true });
 
   const mockLogRepository: LogRepository = {
     saveLog: jest.fn(),
@@ -44,7 +44,7 @@ describe("check-service.ts", () => {
   });
 
   it("should call errorCallback when fetch return false", async () => {
-    (global.fetch as jest.Mock).mockReturnValueOnce({ ok: false });
+    global.fetch = jest.fn().mockResolvedValue({ ok: false });
     const url = "hp:/fakeUrl.com";
     const response = await checkService.execute(url);
 
