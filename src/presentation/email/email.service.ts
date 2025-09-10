@@ -1,12 +1,12 @@
 import nodemailer from "nodemailer";
 import { envs } from "../../config/plugins/envs.plugin";
 
-type Attachment = {
+export type Attachment = {
 	fileName: string;
 	path: string;
 };
 
-interface sendEmailOptions {
+export interface sendEmailOptions {
 	to: string | string[];
 	subject: string;
 	htmlBody: string;
@@ -45,8 +45,7 @@ export class EmailService {
 	async sendEmailWithFileSystemLogs(to: string | string[]) {
 		const subject = "Logs del servidor";
 		const htmlBody = `<h1>Logs del sistema NOC</h1/>
-<p>texto de pruena</p>
-          `;
+<p>texto de prueba</p>`;
 		const attachments: Attachment[] = [
 			{ fileName: "logs-all.log", path: "./logs/logs-all.log" },
 			{ fileName: "logs-medium.log", path: "./logs/logs-medium.log" },
